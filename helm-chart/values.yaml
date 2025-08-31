@@ -1,10 +1,8 @@
 ingress:
-  enabled: false
+  enabled: true
   className: ""
   annotations: {}
-  hosts:
-    - host: ""
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+  host: myapp.local
+  path: /
+  pathType: ImplementationSpecific
   tls: []
