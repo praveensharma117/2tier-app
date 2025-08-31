@@ -1,0 +1,8 @@
+image:
+  repository: devpraveens/2tire-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 5000
