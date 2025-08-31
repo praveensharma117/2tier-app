@@ -19,8 +19,8 @@ pipeline {
         stage('Push to DockerHub') {
             steps {
                 withDockerRegistry([ credentialsId: 'dockerhub-token', url: '' ]) {
-                    sh 'docker tag flask-backend <your-dockerhub-username>/flask-backend:latest'
-                    sh 'docker push <your-dockerhub-username>/flask-backend:latest'
+                    sh 'docker tag flask-backend devpraveens/2tier-app:latest'
+                    sh 'docker push devpraveens/2tier-app:latest'
                 }
             }
         }
