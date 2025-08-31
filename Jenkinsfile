@@ -10,8 +10,10 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    docker.build("flask-backend")
+                dir('backend') {
+                    script {
+                        docker.build("flask-backend")
+                    }
                 }
             }
         }
