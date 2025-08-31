@@ -1,8 +1,24 @@
+replicaCount: 1
+
+image:
+  repository: devpraveens/2tire-app   # your Docker Hub image
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
 ingress:
   enabled: true
   className: ""
   annotations: {}
-  host: myapp.local
-  path: /
-  pathType: ImplementationSpecific
+  hosts:
+    - host: myapp.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
   tls: []
+
+resources: {}
