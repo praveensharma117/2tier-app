@@ -1,17 +1,10 @@
-replicaCount: 1
-
-image:
-  repository: devpraveens/2tire-app
-  tag: latest
-  pullPolicy: IfNotPresent
-
-service:
-  type: ClusterIP
-  port: 80
-  targetPort: 80
-
-serviceAccount:
-  create: true
-  name: ""
-
-resources: {}
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: ""
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
