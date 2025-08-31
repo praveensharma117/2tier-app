@@ -1,7 +1,7 @@
 {{- define "two-tier-app.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create }}
-{{- default (include "two-tier-app.fullname" .) .Values.serviceAccount.name }}
+{{- if .Values.serviceAccount.name }}
+{{ .Values.serviceAccount.name }}
 {{- else }}
-default
+{{ .Release.Name }}
 {{- end }}
 {{- end }}
